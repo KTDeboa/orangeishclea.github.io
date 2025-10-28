@@ -1,0 +1,184 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>rrrrrrrrrrrrrrrrrrrrr</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Bitcount Grid Single", system-ui;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0;
+        background-color: black;
+        color: #e0e0e0;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      a {
+        text-decoration: none;
+      }
+      header {
+        position: relative;
+        height: 450px;
+      }
+      .hang {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 200px;
+      }
+      .container {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 1rem;
+        text-align: center;
+      }
+      h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+      h2 {
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: #aaa;
+        margin-bottom: 1rem;
+      }
+      .links {
+        margin: 1.5rem 0;
+      }
+      .links a {
+        display: block;
+        color: #f05454;
+        margin: 0.5rem 0;
+        transition: color 0.2s ease;
+      }
+      .links a:hover {
+        color: #ff6f6f;
+        text-decoration: underline;
+      }
+      hr {
+        border: none;
+        border-top: 1px solid #333;
+        margin: 2rem 0;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      ul li {
+        margin: 0.5rem auto;
+        padding: 0.75rem 1rem;
+        text-align: center;
+        max-width: 300px;
+        background: none;
+        border: none;
+      }
+      footer {
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 0.875rem;
+        color: #888;
+        padding-bottom: 1rem;
+      }
+      @keyframes swing {
+        0% { transform: translateX(-50%) rotate(0deg); }
+        25% { transform: translateX(-50%) rotate(6deg); }
+        50% { transform: translateX(-50%) rotate(-6deg); }
+        75% { transform: translateX(-50%) rotate(6deg); }
+        100% { transform: translateX(-50%) rotate(0deg); }
+      }
+      .swing {
+        transform-origin: top center;
+        animation: swing 4s ease-in-out infinite;
+      }
+
+      /* === ENTER SCREEN === */
+      #enter-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2em;
+        cursor: pointer;
+        transition: opacity 1s ease;
+        z-index: 9999;
+      }
+      #enter-screen.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* Hide site until click */
+      #site-content {
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
+      #site-content.visible {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="enter-screen">click to enter &gt;_&lt;</div>
+
+    <div id="site-content">
+      <header>
+        <img class="hang swing" src="Hang.jpeg" alt="hang Symbol" />
+      </header>
+      <div class="container">
+        <h1>russianfemales</h1>
+        <h2>cutting forever</h2>
+        <div class="links">
+          <a href="leaks.html" target="_blank">team members & leaks</a>
+          <a href="ddlc.html" target="_blank">ddlc</a>
+        </div>
+        <hr />
+        <ul>
+          <li>foggy rodes</li>
+        </ul>
+        <footer></footer>
+      </div>
+    </div>
+
+    <audio id="background-music" src="music.mp3" loop></audio>
+
+    <script>
+      const enterScreen = document.getElementById("enter-screen");
+      const siteContent = document.getElementById("site-content");
+      const music = document.getElementById("background-music");
+
+      enterScreen.addEventListener("click", async () => {
+        enterScreen.classList.add("hidden");
+        siteContent.classList.add("visible");
+
+        try {
+          await music.play();
+        } catch (err) {
+          console.error("Music playback failed:", err);
+        }
+
+        // Allow scrolling after entering
+        document.body.style.overflow = "auto";
+      });
+    </script>
+  </body>
+</html>
